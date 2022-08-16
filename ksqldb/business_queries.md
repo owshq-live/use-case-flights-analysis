@@ -100,3 +100,10 @@ ON USER.offset = FLIGHT.offset
 PARTITION BY FLIGHT.offset
 EMIT CHANGES;
 ```
+
+
+```sql
+
+select * from KSQLDB_ST_FLIGHT_USER_ANALYSIS_JSON emit changes limit 10;
+
+```
