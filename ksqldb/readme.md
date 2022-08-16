@@ -39,6 +39,8 @@ TERMINATE QUERY_ID;
 
 PRINT 'src-app-user-events-json' FROM BEGINNING;
 PRINT 'src-app-flight-events-json' FROM BEGINNING;
+PRINT 'output-ksqldb-st-flight-user-analysis-json' FROM BEGINNING;
+
 ```
 
 # create objects
