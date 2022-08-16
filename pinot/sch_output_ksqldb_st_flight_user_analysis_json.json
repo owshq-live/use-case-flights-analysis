@@ -1,0 +1,110 @@
+{
+  "schemaName": "sch_output_ksqldb_st_flight_user_analysis_json_428d3463",
+  "dimensionFieldSpecs": [
+    {
+      "name": "offset_number",
+      "dataType": "LONG"
+    },{
+      "name": "user_id_user",
+      "dataType": "LONG"
+    },
+    {
+      "name": "uuid_user",
+      "dataType": "STRING"
+    },
+    {
+      "name": "first_name",
+      "dataType": "STRING"
+    },
+    {
+      "name": "date_birth",
+      "dataType": "STRING"
+    },
+    {
+      "name": "phone_number",
+      "dataType": "STRING"
+    },
+    {
+      "name": "city",
+      "dataType": "STRING"
+    },
+    {
+      "name": "USER_dt_current_timestamp",
+      "dataType": "STRING"
+    },
+    {
+      "name": "USER_ID_FLIGHT",
+      "dataType": "LONG"
+    },
+    {
+      "name": "UUID_FLIGHT",
+      "dataType": "STRING"
+    },
+    {
+      "name": "airline_company",
+      "dataType": "STRING"
+    },
+    {
+      "name": "origin_airport",
+      "dataType": "STRING"
+    },
+    {
+      "name": "origin_iata",
+      "dataType": "STRING"
+    },
+    {
+      "name": "origin_icao",
+      "dataType": "STRING"
+    },
+    {
+      "name": "origin_city",
+      "dataType": "STRING"
+    },
+    {
+      "name": "origin_state",
+      "dataType": "STRING"
+    },
+    {
+      "name": "origin_country",
+      "dataType": "STRING"
+    },
+    {
+      "name": "dest_airport",
+      "dataType": "STRING"
+    },
+    {
+      "name": "dest_iata",
+      "dataType": "STRING"
+    },
+    {
+      "name": "dest_icao",
+      "dataType": "STRING"
+    },
+    {
+      "name": "dest_city",
+      "dataType": "STRING"
+    },
+    {
+      "name": "dest_state",
+      "dataType": "STRING"
+    },
+    {
+      "name": "dest_country",
+      "dataType": "STRING"
+    },
+    {
+      "name": "stops",
+      "dataType": "STRING"
+    },
+    {
+      "name": "flight_price",
+      "dataType": "STRING"
+    }
+  ],
+  "dateTimeFieldSpecs": [{
+    "name": "event_time_flight",
+    "dataType": "STRING",
+    "format": "1:MILLISECONDS:SIMPLE_DATE_FORMAT:yyyy-MM-dd HH:mm:ss.SSSSSS",
+    "granularity": "1:DAYS"
+  }]
+}

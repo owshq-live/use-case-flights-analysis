@@ -64,21 +64,21 @@ select * from ksqldb_stream_user_keyed_json limit 30;
 
 ```sql
 
-CREATE OR REPLACE STREAM ksqldb_st_flight_user_analysis_json
-WITH (KAFKA_TOPIC='ksqldb-st-flight-user-analysis-json', PARTITIONS=9, VALUE_FORMAT='JSON')
+CREATE OR REPLACE STREAM output_ksqldb_st_flight_user_analysis_json
+WITH (KAFKA_TOPIC='output-ksqldb-st-flight-user-analysis-json', PARTITIONS=9, VALUE_FORMAT='JSON')
 AS
 select
 FLIGHT.offset as "offset_number"
 ,USER."user_id" as "user_id_user"
 ,USER."uuid" as "uuid_user"
-,'first_name'
+,"first_name"
 ,"date_birth" 
 ,"phone_number" 
 ,"city"
 ,USER."dt_current_timestamp"
 ,FLIGHT."user_id" as user_id_flight                              
 ,FLIGHT."uuid" as uuid_flight                         
-,'airline'
+,FLIGHT."airline" as "airline_company"
 ,ORIGIN_AIRPORT as "origin_airport"              
 ,ORIGIN_IATA as "origin_iata"                  
 ,ORIGIN_ICAO as "origin_icao"                 
@@ -94,8 +94,8 @@ FLIGHT.offset as "offset_number"
 ,"stops"                        
 ,"price" as "flight_price"
 ,FLIGHT."dt_current_timestamp" AS "event_time_flight"
-FROM ksqldb_stream_flight_keyed_json as USER
-INNER JOIN ksqldb_stream_user_keyed_json as FLIGHT  WITHIN 7 DAY
+FROM ksqldb_stream_flight_keyed_json as FLIGHT
+INNER JOIN ksqldb_stream_user_keyed_json as USER  WITHIN 7 DAY
 ON USER.offset = FLIGHT.offset
 PARTITION BY FLIGHT.offset
 EMIT CHANGES;
@@ -104,6 +104,6 @@ EMIT CHANGES;
 
 ```sql
 
-select * from KSQLDB_ST_FLIGHT_USER_ANALYSIS_JSON emit changes limit 10;
+select * from OUTPUT_KSQLDB_ST_FLIGHT_USER_ANALYSIS_JSON emit changes limit 10;
 
 ```

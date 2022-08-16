@@ -1,0 +1,28 @@
+{
+    "user_id_user":17627,
+    "uuid_user":"0bd9778d-6c18-49c8-b374-f7af5e750bf4",
+    "first_name":"Katie",
+    "date_birth":"1948-01-16",
+    "phone_number":"234.512.2159x1537",
+    "city":"Edwinburgh",
+    "USER_dt_current_timestamp":"2022-08-16 22:29:31.329772",
+    "USER_ID_FLIGHT":46619,
+    "UUID_FLIGHT":"00734385-515e-439e-af59-f695e83c2a87",
+    "airline_company":"Beijing Capital Airlines",
+    "origin_airport":"Chateau Bougon airport",
+    "origin_iata":"NTE",
+    "origin_icao":"LFRS",
+    "origin_city":"Bouguenais",
+    "origin_state":"Pays de la Loire",
+    "origin_country":"France",
+    "dest_airport":"Nanjing Lukou International airport",
+    "dest_iata":"NKG",
+    "dest_icao":"ZSNG",
+    "dest_city":"Nanjing",
+    "dest_state":"Jiangsu",
+    "dest_country":"China",
+    "stops":"1",
+    "flight_price":"213",
+    "event_time_flight":"2022-08-16 22:29:25.950759"
+}
+

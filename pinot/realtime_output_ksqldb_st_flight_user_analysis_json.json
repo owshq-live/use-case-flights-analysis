@@ -1,0 +1,34 @@
+{
+  "tableName": "realtime_output_ksqldb_st_flight_user_analysis_json",
+  "tableType": "REALTIME",
+  "segmentsConfig": {
+    "timeColumnName": "event_time_flight",
+    "timeType": "DAYS",
+    "retentionTimeUnit": "DAYS",
+    "retentionTimeValue": "60",
+    "schemaName": "sch_output_ksqldb_st_flight_user_analysis_json_428d3463",
+    "replication": "1",
+    "replicasPerPartition": "1"
+  },
+  "tenants": {},
+  "tableIndexConfig": {
+    "loadMode": "MMAP",
+    "invertedIndexColumns": [
+      "offset_number"
+    ],
+    "streamConfigs": {
+      "streamType": "kafka",
+      "stream.kafka.consumer.type": "lowlevel",
+       "stream.kafka.topic.name": "output-ksqldb-st-flight-user-analysis-json",
+       "stream.kafka.decoder.class.name": "org.apache.pinot.plugin.stream.kafka.KafkaJSONMessageDecoder",
+       "stream.kafka.consumer.factory.class.name": "org.apache.pinot.plugin.stream.kafka20.KafkaConsumerFactory",
+       "stream.kafka.broker.list": "edh-kafka-brokers.ingestion.svc.Cluster.local:9092",
+       "realtime.segment.flush.threshold.time": "3600000",
+       "realtime.segment.flush.threshold.size": "50000",
+       "stream.kafka.consumer.prop.auto.offset.reset": "smallest"
+    }
+  },
+  "metadata": {
+    "customConfigs": {}
+  }
+}
