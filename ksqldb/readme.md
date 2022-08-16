@@ -142,10 +142,4 @@ DROP STREAM KSQL_STREAM_FLIGHT_EVENT_JSON;
 DROP STREAM KSQL_STREAM_USER_EVENT_JSON;                                
 ```
 
-### dropping topics [kafka]
-```sh
-# drop kafka topics output
-kubectl exec edh-kafka-0 -c kafka -i -t -- bin/kafka-topics.sh --bootstrap-server localhost:9092 --delete --topic output-ksqldb-stream-pr-musics-analysis-avro
-kubectl exec edh-kafka-0 -c kafka -i -t -- bin/kafka-topics.sh --bootstrap-server localhost:9092 --delete --topic output-ksqldb-stream-pr-credit-card-commerce-analysis-avro
 
-```
