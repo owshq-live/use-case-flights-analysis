@@ -1,12 +1,12 @@
 # KSQLDB ~ SQL Streaming for Apache Kafka
 
-## install ksqldb
 ```sh
-
-
+# reading data from topics
 BROKER_IP=167.99.20.155:9094
 kcat -C -b $BROKER_IP -t src-app-flight-events-json -J | jq
 
+BROKER_IP=167.99.20.155:9094
+kcat -C -b $BROKER_IP -t src-app-user-events-json -J | jq
 
 # get info
 kubens processing
@@ -37,9 +37,42 @@ SHOW QUERIES;
 SHOW QUERIES;
 TERMINATE QUERY_ID;
 
-PRINT 'src-app-user-events-json' FROM BEGINNING;
+PRINT 'src-app-user-events-json'
 PRINT 'src-app-flight-events-json' FROM BEGINNING;
+
 PRINT 'output-ksqldb-st-flight-user-analysis-json' FROM BEGINNING;
+
+
+
+
+user_id":18086,
+   "uuid":"73ce2075-76cf-4937-ae2b-15ec890444bc",
+   "flight":{
+      "airline":"GoAir",
+      "origin":{
+         "airport":"Eldorado International airport",
+         "iata":"BOG",
+         "icao":"SKBO",
+         "city":"Fontib\u00f3n",
+         "state":"Distrito Especial",
+         "country":"Colombia"
+      },
+      "destination":{
+         "airport":"Iraklion airport",
+         "iata":"HER",
+         "icao":"LGIR",
+         "city":"Iraklio",
+         "state":"Kriti",
+         "country":"Greece"
+      },
+      "stops":"non-stop",
+      "price":608
+   },
+   "dt_current_timestamp":"2022-08-17 01:34:25.888957"
+
+
+
+
 
 ```
 
@@ -111,9 +144,9 @@ ROWOFFSET
 ,"flight"->"destination"->"country" AS dest_country
 ,"flight"->"stops"
 ,"flight"->"price"
-,"dt_current_timestamp
+,"dt_current_timestamp"
 FROM ksql_stream_flight_event_json 
-EMIT CHANGES LIMIT 10;
+EMIT CHANGES LIMIT 10
 ```
 
 ```sql
